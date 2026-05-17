@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша Свадьба • Приглашение</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #4a9fff, #c026d3);
+            min-height: 100dvh;
+            color: #f0e6ff;
+        }
+        .container {
+            min-height: 100dvh;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .photo {
+            width: 48%;
+            max-width: 170px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 6px solid rgba(255,255,255,0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+        .card {
+            background: rgba(255,255,255,0.96);
+            color: #2a1b4a;
+            border-radius: 24px;
+            padding: 40px 25px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+            margin-top: auto;
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #4c1d95;
+        }
+        .hearts { font-size: 2rem; margin: 15px 0; color: #e11d48; }
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 32px;
+            background: linear-gradient(135deg, #c026d3, #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="photo-container">
+            <img src="./wife.png" alt="Невеста" class="photo">
+            <img src="./husband.png" alt="Жених" class="photo">
+        </div>
+
+        <div class="card">
+            <h1>Мы женимся!</h1>
+            <div style="font-size:1.3rem; color:#6b4aa1; margin:10px 0;"><p><strong>Павел</strong> и <strong>Вера</strong></p></div>
+            <div class="hearts">♡ ♥ ♡</div>
+            
+            <div style="line-height:2; font-size:1.1rem; margin:25px 0;">
+                <p style="font-size:1.3rem;">Дорогие наши близкие,</br></p>
+                <p>сердце подсказывает: самое время </p><p style="font-style: italic;">сказать «да»</p>
+                <p></br>И мы очень хотим разделить этот момент с вами:</br></p>
+                <p><strong>🤍 26 мая 2026 в 15:00</strong></p>
+                <p><strong>📍 на ул.Верности, 4</strong></p>
+            </div>
+
+            <a href="https://yandex.com/maps/2/saint-petersburg/?ll=30.401119%2C60.008542&mode=poi&poi%5Bpoint%5D=30.399856%2C60.008806&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1015666840&z=18.11" target="_blank" class="map-link">
+                📍 Открыть на карте
+            </a>
+        </div>
+    </div>
+</body>
+</html>

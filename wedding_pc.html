@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша Свадьба • Приглашение</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap');
+        
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+            color: #f0e6ff;
+            background: #1a1a2e;
+        }
+        .container {
+            display: flex;
+            min-height: 100vh;
+            position: relative;
+        }
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #4a9fff 0%, #ff69b4 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .right-panel {
+            flex: 1;
+            background: linear-gradient(135deg, #ff69b4 0%, #c026d3 45%, #6b21a8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo {
+            width: 380px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.55);
+            border: 12px solid rgba(255,255,255,0.22);
+        }
+
+        .invitation-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.96);
+            color: #2a1b4a;
+            padding: 55px 48px;
+            border-radius: 28px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 35px 70px rgba(0,0,0,0.45);
+            z-index: 10;
+        }
+
+        .invitation-card h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            color: #4c1d95;
+        }
+
+        .hearts { font-size: 36px; margin: 20px 0 30px; color: #e11d48; }
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 25px;
+            padding: 16px 38px;
+            background: linear-gradient(135deg, #c026d3, #3b82f6);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 12px 30px rgba(192,38,211,0.45);
+        }
+        .floating-hearts { position: absolute; inset: 0; pointer-events: none; z-index: 1; overflow: hidden; }
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255,105,180,0.35);
+            animation: floatHeart 26s linear infinite;
+        }
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-120px) rotate(30deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="floating-hearts" id="hearts"></div>
+            <img src="./wife.png" alt="Невеста" class="photo">
+            
+        </div>
+        <div class="right-panel">
+            <img src="./husband.png" alt="Жених" class="photo">
+        </div>
+
+        <div class="invitation-card">
+            <h1>Мы женимся!</h1>
+            <div style="font-size:23px; color:#6b4aa1; letter-spacing:3px; margin:15px 0;"><p><strong>Павел</strong> и <strong>Вера</strong></p></div>
+            <div class="hearts">♡ ♥ ♡</div>
+            
+            <div style="line-height:2.2; font-size:18px; margin:30px 0;">
+                <p style="font-size:1.3rem;">Дорогие наши близкие,</br></p>
+                <p>сердце подсказывает: самое время </p><p style="font-style: italic;">сказать «да»</p>
+                <p></br>И мы очень хотим разделить этот момент с вами:</br></p>
+                <p><strong>🤍 26 мая 2026 в 15:00</strong></p>
+                <p><strong>📍 на ул.Верности, 4</strong></p>
+            </div>
+
+            <a href="https://yandex.com/maps/2/saint-petersburg/?ll=30.401119%2C60.008542&mode=poi&poi%5Bpoint%5D=30.399856%2C60.008806&poi%5Buri%5D=ymapsbm1%3A%2F%2Forg%3Foid%3D1015666840&z=18.11" target="_blank" class="map-link">
+                📍 Открыть на карте
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const h = document.createElement('div');
+            h.className = 'heart';
+            h.textContent = Math.random() > 0.5 ? '♡' : '♥';
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animationDuration = (Math.random() * 15 + 22) + 's';
+            document.getElementById('hearts').appendChild(h);
+            setTimeout(() => h.remove(), 50000);
+        }
+        setInterval(createHeart, 100);
+    </script>
+</body>
+</html>

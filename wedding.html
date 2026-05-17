@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наша Свадьба</title>
+    <script>
+        function detectDevice() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const width = window.innerWidth;
+
+            // Если ширина меньше 768px ИЛИ это мобильное устройство
+            if (width < 768 || /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent.toLowerCase())) {
+                window.location.href = "wedding_mobile.html";
+            } else {
+                window.location.href = "wedding_pc.html";
+            }
+        }
+
+        // Запускаем сразу
+        window.onload = detectDevice;
+    </script>
+</head>
+<body style="background:#1a1a2e; color:white; font-family:sans-serif; text-align:center; padding-top:50px;">
+    <p>Определяем устройство...</p>
+</body>
+</html>
